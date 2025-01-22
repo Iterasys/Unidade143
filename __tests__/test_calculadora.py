@@ -8,7 +8,7 @@ from calculadora.calculadora import somar_dois_numeros,       \
 from utils.utils import ler_csv
 
 def test_somar_dois_numeros():
-    # AAA
+    # AAA  
 
     # Arrange - Configura
     num1 = 5
@@ -111,3 +111,34 @@ def test_somar_dois_numeros_csv(num1, num2, resultado_esperado):
 
     # Assert - Valida
     assert float(resultado_esperado) == resultado_atual
+
+
+@pytest.mark.parametrize('id, op, num1, num2, resultado_esperado',[
+    (1,'Soma',5,7,12), #tupla
+    (2,'Sub',3,1,2),
+    (3,'Mult',-1,6,-6),
+    (4,'Div',-9,-2,4.5),
+    (5,'Div', 6,0,'Não é possível dividir por zero')
+])
+def test_calcular_dois_numeros_lista(id, op, num1, num2, resultado_esperado):
+    # AAA
+
+    # Arrange - Configura
+    # Dados vem da lista acima (parametrize)
+    resultado_atual = ''
+    # Act - Executa
+    match(op):
+        case "Soma":
+            resultado_atual = somar_dois_numeros(num1, num2)
+        case "Sub":
+            resultado_atual = subtrair_dois_numeros(num1, num2)
+        case "Mult":
+            resultado_atual = multiplicar_dois_numeros(num1, num2)
+        case "Div":
+            resultado_atual = dividir_dois_numeros(num1, num2)
+        case _:
+            print("valor inesperado de operação")
+
+    # Assert - Valida
+
+    assert resultado_esperado == resultado_atual

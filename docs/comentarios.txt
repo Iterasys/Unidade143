@@ -43,3 +43,33 @@ Requisito:
 - Framework de Teste de Unidade: Pytest
   - funciona também como o motor (engine) para os demais testes
 - Gerenciador de Pacotes: pip
+
+
+Existem 2 grandes estratégias de organização de base em automação
+
+                        Separar + de -              Tudo Junto
+Complexidade               Simples                  Exponencial
+Relatório                  Natural                  Criado
+
+Quem testa a automação de teste?
+
+Complexidade Ciclomatica de McCabe
+
+Qual o seu nome? --> José --> Olá José! ---> 1
+Que horas são? --> 08:20 --> Se for < 12:00 --> Bom dia!   ---> 2
+                             Senão          --> Boa tarde!
+
+Para não precisar testar a automação, mantemos a complexidade no mínimo (1)
+
+
+TDD - Test Driven Development
+      Desenvolvimento Direcionado por Teste
+
+Começa a sprint
+- reunião de planning - estórias / tarefas
+- devs criam esqueletos de código para as estórias que vão ser
+- cria os testes de Unidade
+- passa a executar todos os testes de unidade diariamente
+
+
+
